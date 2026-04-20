@@ -600,6 +600,14 @@ Some applications block input containing hostnames like `127.0.0.1` and localhos
 - https://www.victim.com/redir/r.php?redirectUri=https://attacker%E3%80%82com%23.victim.com/
 - https://www.victim.com/redir/r.php?redirectUri=/%0d/attacker.com/
 
+***.microsoft.com allowed** - from [@sushicomabacate](https://x.com/sushicomabacate/status/2043675013836890294)
+1) create an app in Azure with OAuth
+2) set the redirect to the domain I wanted, in this case Bugcrowd
+3) create a URL with the silent OAuth authentication flow
+4) The final result is something like
+	```
+	/logout?redirect_url=https://login.microsoftonline[.]com/common/oauth2/v2.0/authorize?client_id=…&response_type=code&scope=invalid_scope&prompt=none
+	```
 
 ## XXE injection
 
