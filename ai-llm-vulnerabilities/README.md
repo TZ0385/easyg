@@ -20,6 +20,8 @@
 
 - [Types of LLM vulnerabilities | promptfoo](https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/)
 - [llms.txt polyglot prompt injection example](https://josephthacker.com/llms.txt)
+- [Arcanum PI Taxonomy](https://arcanum-sec.github.io/arc_pi_taxonomy/)
+- [Parseltongue 3.1 - LLM Payload Crafter](https://arcanum-sec.github.io/P4RS3LT0NGV3/)
 
 
 ## Prompt Injection
