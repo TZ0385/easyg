@@ -90,6 +90,7 @@ Verify email addresses
 - [Social Searcher](https://www.social-searcher.com/)
 - [Twofi](https://digi.ninja/projects/twofi.php)
 - [linkedin2username](https://github.com/initstring/linkedin2username)
+- [Xquik](https://github.com/Xquik-dev/x-twitter-scraper) - Independent X (Twitter) data API for search, follower export, monitors, and MCP.
 
 
 ### Data breaches
@@ -106,6 +107,5 @@ Malicious hackers frequently post stolen passwords on [Pastebin](https://pastebi
 ### Acquisitions
 
 Search for any acquisitions by the target
-- [bgp.he.net](https://bgp.he.net/)
 - [Crunchbase](https://www.crunchbase.com/)
 - [OCCRP Aleph](https://aleph.occrp.org/)
