@@ -6,7 +6,6 @@
 
 - [General checklists](#general-checklists)
 - [Toolset](#toolset)
-- [Testing layers](#testing-layers)
 - [Recon](#recon)
 - [Penetration Testing cycle](#penetration-testing-cycle)
 - [Bug Bounty Hunting](#bug-bounty-hunting)
@@ -105,6 +104,44 @@
     - [ ] Determine whether any IDs, documentation, or data are required
     - [ ] Verify whether any sections or functionalities are not working
 - [ ] Create a PwnDoc and prepare files (excel/markdown) for notes and progress tracking
+
+**Network Penetration Test (tools only)**
+- [ ] nmap
+  ```bash
+  nmap -sS -Pn --top-ports 100 -vvv -oA <ddmmaaaa>-nmap-scan-top100
+  nmap -sS -Pn -p- -vvv -oA <ddmmaaaa>-nmap-scan
+  nmap -sU -Pn --top-ports 100 -vvv -oA <ddmmaaaa>-nmap-udp-scan-top100
+  nmap -sU -Pn -p- -vvv -oA <ddmmaaaa>-nmap-udp-scan
+  nmap -sT -Pn --top-ports 100 -vvv -oA <ddmmaaaa>-nmap-scan-stealth-top100
+  nmap -sT -Pn -p- -vvv -oA <ddmmaaaa>-nmap-scan-stealth
+
+  **Other flags**
+  -T timing template, how fast and aggressive your port scan runs.Higher numbers mean faster and louder scans
+
+  **Tech specific**
+  nmap --script "rdp-enum-encryption or rdp-vuln-ms12-020 or rdp-ntml-info" -p 3389
+  ```
+- [ ] `ssh-audit`
+- [ ] `testssl.sh`
+- [ ] `nc -v IP PORT` check what port does what and or the banner
+- [ ] `ssh root@IP` check if password authentication is enabled
+- [ ] Java RMI
+  ```bash
+  nmap -sV -script "rmi-dumpregistry,rmi-vuln-classloader" -vvv -p PORTS
+  msf > use auxiliary/scanner/misc/java_rmi_server
+  msf > use auxiliary/gather/java_rmi_registry
+  ```
+- [ ] `wes -o wes_output.txt systeminfo.txt`
+- [ ] `msf > use auxiliary/scanner/winrm/winrm_auth_methods`
+	- [ ] further evidence `impacket-wmiexec DOMAIN/USER:PASSWORD@IP`
+- [ ] `crackmapexec smb IP -u '' -p '' --shares`
+- [ ] `smbclient \\\\server\\share -U USER -W DOMAIN -c 'put file.txt'`
+- [ ] SMB version
+  ```bash
+  msf > use auxiliary/scanner/smb/smb_version
+  nmap -p 445 --script smb-os-discovery
+  note: detection possible also with Wireshark
+  ```
 
 ## Bug Bounty Hunting
 
